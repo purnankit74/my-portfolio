@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #2374ed;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background: #eff2f7;
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #1d1c1c;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ffea;
+}
+
+/* Home Section */
+#home {
+    text-align: center;
+    padding: 100px 20px;
+    background: #fbf7f7;
+}
+
+#home h1 {
+    font-size: 3rem;
+    color: #0d1117;
+    animation: fadeIn 1s ease-out;
+}
+
+#home h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+#home img {
+    border-radius: 50%;
+    border: 5px solid #0d1117;
+    width: 200px;
+    height: 200px;
+    animation: zoomIn 2s ease;
+}
+
+/* Skills Section */
+#Skills {
+    padding: 60px 20px;
+    background: #54990b;
+    text-align: center;
+}
+
+#Skills h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+#Skills ul {
+    list-style-type: none;
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    background: #f7f0f6;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #111;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #0673b2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    background-color: #0d1117;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #00ffea;
+    color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Optional: Fancy cursor projection effect */
+body::after {
+    content: '';
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 255, 234, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    animation: pulse 1s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+
+body {
+    cursor: none;
+}
+
+body:hover::after {
+    transition: 0.2s ease;
+}
+#glow-cursor {
+    animation: cursorPulse 1.5s infinite ease-in-out;
+}
+
+@keyframes cursorPulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.4);
+        opacity: 0.5;
+    }
+}
+    </style>
+
+
+	<title>Purnankit Sirvi - Backend Developer</title>
+</head>
+<body>
+    <script >document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.createElement("div");
+    cursor.id = "glow-cursor";
+    document.body.appendChild(cursor);
+
+    // Set styles directly
+    Object.assign(cursor.style, {
+        position: "fixed",
+        width: "20px",
+        height: "20px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(0, 255, 234, 0.6)",
+        pointerEvents: "none",
+        zIndex: "9999",
+        boxShadow: "0 0 10px #00ffee, 0 0 25px #00ffee",
+        transform: "translate(-50%, -50%)",
+        transition: "transform 0.05s ease"
+    });
+
+    // Make it follow the mouse
+    document.addEventListener("mousemove", (e) => {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+
+    // Optional: pulse on click
+    document.addEventListener("click", () => {
+        cursor.style.transform = "translate(-50%, -50%) scale(1.4)";
+        setTimeout(() => {
+            cursor.style.transform = "translate(-50%, -50%) scale(1)";
+        }, 150);
+    });
+});</script>
+	<!-- Navigation Menu -->
+	<nav>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#Skills">Skills</a></li>
+			<li><a href="#contact">Contact Us</a></li>
+
+		</ul>
+	</nav>
+
+	<!-- Home Section -->
+	<section id="home">
+		<h1>Purnankit Sirvi</h1>
+		<h2>Backend Developer</h2>
+		<img src="purnankit.jpg" alt="Purnankit Sirvi" width="200" height="200">
+		
+	</section>
+	<secton id="Skills">
+		<div>
+		<h2>Skills</h2>
+		<ul>
+			<li>Backend Developer</li>
+			
+		</ul>
+		<ul>
+			<li> programming languages I use</li>
+			<br>
+			
+			<li>Java Node JS</li>
+		
+			<li>Python</li>
+
+		</ul>	
+			
+		</div>
+		
+
+	<!-- Contact Us Section -->
+	<section id="contact">
+		<h2>Contact Us</h2>
+		<form>
+			<label for="name">Name:</label>
+			<input type="text" id="name" name="name"><br><br>
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email"><br><br>
+			<label for="message">Message:</label>
+			<textarea id="message" name="message"></textarea><br><br>
+			<input type="submit" value="Submit">
+		</form>
+	</section>
+</body>
+</html>
